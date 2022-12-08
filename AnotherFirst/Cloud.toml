@@ -1,3 +1,6 @@
 [settings]
   buildImage = false
 
+[[container.copy.files]]
+sourceFile="./resources.json"
+target="/home/ballerina/resources.json"
