@@ -6,5 +6,5 @@ sourceFile="./resources.json"
 target="/home/ballerina/resources.json"
 
 [[container.copy.files]]
-sourceFile="./resources.json"
+sourceFile="./AnotherFirst/resources.json"
 target="/home/ballerina/resources2.json"
