@@ -10,7 +10,7 @@ service / on new http:Listener(9090) {
     # + return - string name with hello message or error
     resource function get greeting(string name) returns string|error {
         // Send a response back to the caller.
-        json resourcesJSON = check io:fileReadJson("/home/ballerina/resources.json");
+        json resourcesJSON = check io:fileReadJson("resources.json");
         if name is "" {
             return error("name should not be empty!");
         }
