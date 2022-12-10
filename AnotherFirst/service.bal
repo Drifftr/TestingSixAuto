@@ -11,9 +11,11 @@ service / on new http:Listener(9090) {
     resource function get greeting(string name) returns string|error {
         // Send a response back to the caller.
         json resourcesJSON = check io:fileReadJson("/home/ballerina/resources2.json");
+        string absValue = check file:getAbsolutePath("service.bal");
+        
         if name is "" {
             return error("name should not be empty!");
         }
-        return "Oh Hello AnotherFirst, " + name + "json is : " + resourcesJSON.toJsonString();
+        return "Oh Hello AnotherFirst, " + name + "json is : " + resourcesJSON.toJsonString() + "Absoulte path is : " + absValue;
     }
 }
