@@ -11,7 +11,7 @@ service / on new http:Listener(9090) {
     # + return - string name with hello message or error
     resource function get greeting(string name) returns string|error {
         // Send a response back to the caller.
-        json resourcesJSON = check io:fileReadJson("/home/ballerina/resources2.json");
+        json resourcesJSON = check io:fileReadJson("/home/ballerina/resources.json");
         file:MetaData[] readDirResults = check file:readDir("/home/ballerina/");
         //string absValue = check file:getAbsolutePath("service.bal");
         
