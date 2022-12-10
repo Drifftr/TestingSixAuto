@@ -1,5 +1,4 @@
 import ballerina/http;
-import ballerina/io;
 import ballerina/file;
 
 # A service representing a network-accessible API
@@ -11,12 +10,12 @@ service / on new http:Listener(9090) {
     # + return - string name with hello message or error
     resource function get greeting(string name) returns string|error {
         // Send a response back to the caller.
-        json resourcesJSON = check io:fileReadJson("/home/ballerina/resources2.json");
+        // json resourcesJSON = check io:fileReadJson("/home/ballerina/resources2.json");
         string absValue = check file:getAbsolutePath("service.bal");
         
         if name is "" {
             return error("name should not be empty!");
         }
-        return "Oh Hello AnotherFirst, " + name + "json is : " + resourcesJSON.toJsonString() + "Absoulte path is : " + absValue;
+        return "Oh Hello AnotherFirst, " + name + "Absoulte path is : " + absValue;
     }
 }
